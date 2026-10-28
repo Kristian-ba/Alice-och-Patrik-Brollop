@@ -1,0 +1,294 @@
+<title>Patrik & Alice</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;700&display=swap">
+<style>
+/* Layout: en lång enkelsida i blush och korall. Stora versaler som hero, löpande "Vi gifter oss"-band, sedan tydliga sektioner med tunna korallstreck. */
+:root {
+  --blush: #f7ddd4;
+  --blush-deep: #f1c9bd;
+  --coral: #e2433a;
+  --ink: #2a1f24;
+  --navy: #1d2331;
+  --display: "Gloock", "Bodoni 72", Didot, Georgia, serif;
+  --body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--blush);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-block: 0;
+}
+a { color: var(--coral); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
+.wrap {
+  max-width: 1040px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.draft {
+  background: var(--navy);
+  color: var(--blush);
+  font-size: 13px;
+  letter-spacing: .04em;
+  text-align: center;
+  padding: 8px 16px;
+}
+header.top { border-bottom: 1px solid var(--coral); }
+header.top .wrap {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 8px 24px; padding-block: 18px;
+}
+.mono { font-family: var(--display); color: var(--coral); font-size: 22px; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+nav a { color: var(--coral); text-decoration: none; font-size: 15px; font-weight: 500; }
+nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.hero { position: relative; padding-block: clamp(40px, 8vw, 90px) 0; overflow: hidden; }
+.hero .grid {
+  display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; justify-items: center; text-align: center;
+}
+.hero h1 {
+  font-family: var(--display); font-weight: 400; color: var(--coral);
+  text-transform: uppercase; line-height: .92; letter-spacing: -.01em;
+  font-size: clamp(64px, 17vw, 190px); margin: 0; text-wrap: balance;
+}
+.hero h1 .amp { display: block; font-size: .7em; line-height: .9; }
+.side {
+  font-family: var(--display); color: var(--coral); text-transform: uppercase;
+  letter-spacing: .14em; font-size: 14px; line-height: 1.6; margin: 0;
+}
+.side b { font-weight: 400; display: block; }
+@media (min-width: 820px) {
+  .hero .grid { grid-template-columns: 1fr auto 1fr; text-align: left; }
+  .hero .grid .side:first-child { justify-self: start; max-width: 12ch; }
+  .hero .grid .side:last-child { justify-self: end; text-align: right; }
+}
+.count { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 30px; margin-top: 44px; color: var(--coral); }
+.count div { text-align: center; min-width: 64px; }
+.count strong { display: block; font-family: var(--display); font-weight: 400; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.count span { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+
+.band { margin-top: 56px; border-block: 1px solid var(--coral); overflow: hidden; background: var(--blush-deep); }
+.track { display: flex; width: max-content; animation: slide 38s linear infinite; }
+.track span { font-family: var(--display); color: var(--coral); font-size: 24px; padding: 14px 0; white-space: nowrap; }
+.track span::after { content: "\2665"; font-size: 15px; margin-inline: 28px; vertical-align: 2px; }
+@keyframes slide { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .track { animation: none; } html { scroll-behavior: auto; } }
+
+section.sec { padding-block: 72px 8px; scroll-margin-top: 8px; }
+.sec .head { display: grid; grid-template-columns: 1fr; gap: 6px; border-top: 1px solid var(--coral); padding-top: 18px; margin-bottom: 30px; }
+.sec h2 {
+  font-family: var(--display); font-weight: 400; color: var(--coral); margin: 0;
+  font-size: clamp(34px, 6vw, 56px); line-height: 1; text-transform: uppercase; text-wrap: balance;
+}
+.sec .kicker { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--coral); font-weight: 700; }
+.lead { max-width: 60ch; margin: 0 0 24px; font-size: 19px; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px 36px; }
+.cols > * { min-width: 0; }
+h3 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 0 0 6px; color: var(--navy); }
+p { margin: 0 0 12px; }
+.small { font-size: 15px; opacity: .85; }
+
+.program { list-style: none; padding: 0; margin: 0; }
+.program li { display: grid; grid-template-columns: 76px 1fr; gap: 6px 20px; padding: 16px 0; border-bottom: 1px solid rgba(226, 67, 58, .35); }
+.program li:first-child { border-top: 1px solid rgba(226, 67, 58, .35); }
+.program time { font-family: var(--display); color: var(--coral); font-size: 24px; font-variant-numeric: tabular-nums; }
+.program strong { display: block; font-weight: 700; }
+.program span { font-size: 15px; opacity: .85; }
+
+.note { background: var(--navy); color: var(--blush); padding: 26px; }
+.note h3 { color: var(--blush); }
+.note a { color: #ffb4a8; }
+.note p:last-child { margin-bottom: 0; }
+
+dl.facts { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; }
+dl.facts dt { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--coral); font-weight: 700; padding-top: 4px; }
+dl.facts dd { margin: 0; }
+
+details { border-top: 1px solid rgba(226, 67, 58, .4); padding: 14px 0; }
+details:last-of-type { border-bottom: 1px solid rgba(226, 67, 58, .4); }
+summary { cursor: pointer; font-family: var(--display); font-size: 21px; color: var(--navy); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--coral); font-size: 26px; line-height: 1; }
+details[open] summary::after { content: "\2212"; }
+details p { margin: 12px 0 0; max-width: 62ch; }
+
+.btn {
+  display: inline-block; border: 1px solid var(--coral); color: var(--coral); text-decoration: none;
+  padding: 12px 26px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 14px;
+}
+.btn:hover { background: var(--coral); color: var(--blush); }
+.contacts { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px; }
+.contacts p { margin: 0; }
+footer { margin-top: 90px; background: var(--coral); color: var(--blush); text-align: center; }
+footer .wrap { padding-block: 44px; }
+footer .big { font-family: var(--display); font-size: clamp(32px, 7vw, 60px); text-transform: uppercase; line-height: 1; margin: 0 0 10px; }
+footer p { margin: 0; }
+</style>
+
+<div class="draft">Utkast. Datum, platser och kontaktuppgifter är exempel och byts ut mot de riktiga.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mono" href="#start">Patrik &amp; Alice</a>
+    <nav aria-label="Huvudmeny">
+      <a href="#program">Program</a>
+      <a href="#hitta-hit">Hitta hit</a>
+      <a href="#boende">Boende</a>
+      <a href="#klader">Klädkod</a>
+      <a href="#osa">OSA</a>
+      <a href="#presenter">Presenter</a>
+      <a href="#fragor">Frågor</a>
+    </nav>
+  </div>
+</header>
+
+<main id="start">
+  <section class="hero">
+    <div class="wrap">
+      <div class="grid">
+        <p class="side">Vi gifter<br>oss</p>
+        <h1>Patrik <span class="amp">&amp;</span> Alice</h1>
+        <p class="side"><b>19.06.27</b><b>Gävle</b></p>
+      </div>
+      <div class="count" aria-label="Nedräkning till bröllopet">
+        <div><strong id="cd-d">0</strong><span>dagar</span></div>
+        <div><strong id="cd-h">0</strong><span>timmar</span></div>
+        <div><strong id="cd-m">0</strong><span>minuter</span></div>
+      </div>
+    </div>
+    <div class="band" aria-hidden="true">
+      <div class="track" id="track"></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="sec" id="program">
+      <div class="head"><span class="kicker">Lördag 19 juni 2027</span><h2>Dagens program</h2></div>
+      <ul class="program">
+        <li><time>14:00</time><div><strong>Samling och vigsel</strong><span>Kyrkan. Kom gärna 20 minuter före.</span></div></li>
+        <li><time>15:00</time><div><strong>Mingel med bubbel</strong><span>Trädgården vid festlokalen. Fotografering av brudparet och gruppbilder.</span></div></li>
+        <li><time>17:00</time><div><strong>Middag</strong><span>Tre rätter. Tal och sång mellan rätterna.</span></div></li>
+        <li><time>20:30</time><div><strong>Tårta och dans</strong><span>Brudvals följt av fest till sent.</span></div></li>
+        <li><time>01:00</time><div><strong>Sista låten</strong><span>Skjuts till hotellen ordnas, se Hitta hit.</span></div></li>
+        <li><time>11:00</time><div><strong>Frukost dagen efter, söndag</strong><span>För de som vill säga hejdå över kaffe.</span></div></li>
+      </ul>
+    </section>
+
+    <section class="sec" id="hitta-hit">
+      <div class="head"><span class="kicker">Platser och resor</span><h2>Hitta hit</h2></div>
+      <div class="cols">
+        <div>
+          <h3>Vigsel</h3>
+          <p>Exempelkyrkan<br>Kyrkogatan 1, Gävle</p>
+          <p class="small"><a href="https://www.google.com/maps/search/?api=1&amp;query=Gävle+kyrka" target="_blank" rel="noopener">Öppna i kartor</a></p>
+        </div>
+        <div>
+          <h3>Middag och fest</h3>
+          <p>Exempelgården<br>Gårdsvägen 12, utanför Gävle</p>
+          <p class="small"><a href="https://www.google.com/maps/search/?api=1&amp;query=Gävle" target="_blank" rel="noopener">Öppna i kartor</a></p>
+        </div>
+        <div>
+          <h3>Så tar du dig hit</h3>
+          <p>Tåg till Gävle C, sedan 10 minuter med taxi eller buss. Bilplatser finns vid festlokalen, gratis hela dagen.</p>
+        </div>
+        <div>
+          <h3>Skjuts mellan platserna</h3>
+          <p>Buss går från kyrkan till festlokalen efter vigseln, och tillbaka till hotellen vid midnatt och kl. 01:00.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="boende">
+      <div class="head"><span class="kicker">Övernattning</span><h2>Boende</h2></div>
+      <p class="lead">Vi har reserverat rum på två hotell i centrum. Boka senast 1 maj och ange kod "PATRIKALICE".</p>
+      <div class="cols">
+        <div><h3>Hotell Exempel</h3><p>Rum från 1 150 kr per natt. Frukost ingår. 10 minuter till kyrkan.</p></div>
+        <div><h3>Stadshotellet Exempel</h3><p>Rum från 950 kr per natt. Enklare standard, nära stationen.</p></div>
+        <div><h3>Fler alternativ</h3><p>Vill ni bo billigare finns vandrarhem och Airbnb i närheten. Hör av er så hjälper vi till.</p></div>
+      </div>
+    </section>
+
+    <section class="sec" id="klader">
+      <div class="head"><span class="kicker">Vad ska jag ha på mig?</span><h2>Klädkod</h2></div>
+      <div class="cols">
+        <div>
+          <h3>Mörk kostym eller festklänning</h3>
+          <p>Det är sommar och delar av mingel och fest är utomhus. Välj tunt tyg och skor som går bra i gräs.</p>
+        </div>
+        <div>
+          <h3>Färger</h3>
+          <p>Allt utom vitt och krämvitt, de färgerna är reserverade för bruden. Koralla och rosa toner är extra välkomna.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="osa">
+      <div class="head"><span class="kicker">Svara senast 1 april 2027</span><h2>O.S.A.</h2></div>
+      <p class="lead">Meddela oss om du kommer, hur många ni blir och eventuella allergier eller specialkost. Skriv även om du vill hålla tal eller framföra något.</p>
+      <p><a class="btn" href="#osa">Länk till OSA-formulär</a></p>
+      <p class="small">Här kopplas det riktiga formuläret in, eller så svarar gästerna via telefon eller mejl till kontaktpersonerna nedan.</p>
+    </section>
+
+    <section class="sec" id="presenter">
+      <div class="head"><span class="kicker">Det viktigaste är att ni kommer</span><h2>Presenter</h2></div>
+      <div class="note">
+        <h3>Önskar ni ge något</h3>
+        <p>Vi har det mesta hemma. Vill ni ändå ge något tar vi gärna emot ett bidrag till bröllopsresan. Swish-nummer och information kommer här.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="kontakt">
+      <div class="head"><span class="kicker">Frågor under dagen</span><h2>Kontakt</h2></div>
+      <div class="contacts">
+        <p><strong>Toastmaster</strong><br>Namn Efternamn<br>070-000 00 00</p>
+        <p><strong>Tärna</strong><br>Namn Efternamn<br>070-000 00 00</p>
+        <p><strong>Marskalk</strong><br>Namn Efternamn<br>070-000 00 00</p>
+      </div>
+    </section>
+
+    <section class="sec" id="fragor">
+      <div class="head"><span class="kicker">Vanliga frågor</span><h2>Bra att veta</h2></div>
+      <details><summary>Är barn välkomna?</summary><p>Ja, barn är varmt välkomna till vigsel och middag. Barnmeny finns. Vi ordnar barnvakt och sovrum för de minsta efter kl. 21.</p></details>
+      <details><summary>Vad händer om det regnar?</summary><p>Minglet flyttar in i festlokalen. Vigseln är i kyrkan och påverkas inte av vädret.</p></details>
+      <details><summary>Får jag ta egna bilder?</summary><p>Gärna, men vi ber er vänta med kameran under själva vigseln. Vår fotograf tar hand om det viktigaste.</p></details>
+      <details><summary>Vill jag hålla tal, vem kontaktar jag?</summary><p>Hör av dig till toastmastern senast 1 juni så får du en plats i talarlistan.</p></details>
+      <details><summary>Var kan jag ladda upp mina bilder efteråt?</summary><p>En länk till ett gemensamt bildalbum kommer på den här sidan efter bröllopet.</p></details>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">Patrik &amp; Alice</p>
+    <p>19 juni 2027, Gävle</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var t = document.getElementById("track");
+  var one = "";
+  for (var i = 0; i < 8; i++) one += "<span>Vi gifter oss</span>";
+  t.innerHTML = one + one;
+
+  var target = new Date("2027-06-19T14:00:00+02:00").getTime();
+  function tick() {
+    var diff = Math.max(0, target - Date.now());
+    var d = Math.floor(diff / 864e5);
+    var h = Math.floor(diff % 864e5 / 36e5);
+    var m = Math.floor(diff % 36e5 / 6e4);
+    document.getElementById("cd-d").textContent = d;
+    document.getElementById("cd-h").textContent = h;
+    document.getElementById("cd-m").textContent = m;
+  }
+  tick();
+  setInterval(tick, 30000);
+})();
+</script>
